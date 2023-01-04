@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  background-color: #f1f1f1;
+  display: flex;
+  width: 100%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 100%;
+  border-left: none;
+  height: 300px;
+  display: none;
+  background-color: #ccc;
+}
+
+/* Clear floats after the tab */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.rb-head, .ds-head, .rd-head {text-align: center;font-size: 52px;}
+.rb-title, .ds-title, .rd-title {font-size: 16px;}
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onmouseover="openCity(event, 'rb')"><h1 class="rb-head">Rb</h1>
+<p class="rb-title">RISK BASED HAIRCUT METHODOLGY</p></button>
+  <button class="tablinks" onmouseover="openCity(event, 'ds')"><h1 class="ds-head">Ds</h1><p class="ds-title">DEBT SECURITIES HAIRCUT</p></button>
+  <button class="tablinks" onmouseover="openCity(event, 'rd')"><h1 class="rd-head">Rd</h1><p class="rd-title">REPURCHASE AGREEMENT DEDUCTIONS</p></button>
+</div>
+
+<div id="rb" class="tabcontent">
+  <h1>Risk Based Haircut Methodolgy</h1>
+  <p>The Appendix A application calculates capital charges (haircuts) on qualified stock baskets, stocks, options, futures, and options on futures using the OCC Profit & Loss Values File. NET CAPITAL REQUIREMENTS – SEA Rule 15c3-1</p>
+</div>
+
+<div id="ds" class="tabcontent">
+  <h1>Debt Securities Haircut</h1>
+  <p>The Debt Securities application calculates capital charges (haircuts) for United States Government bonds, U.S. Agency bonds, Municipal bonds, Investment Grade Corporate bonds, High Yield Corporate bonds, and Preferred Stock. The application attempts to minimize charges by hedging debt securities according to SEA Rule 15c3-1(c)(2)(vi)(A)(3) and SEA Rule 15c3-1(c)(2)(vi)(F)(2).</p> 
+</div>
+
+<div id="rd" class="tabcontent">
+  <h1>Repurchase Agreement Deductions</h1>
+  <p>The application calculates Deficits, Excesses, and Deductions (Deductions From Net Worth) for Repurchase Agreements and Reverse Repurchase Agreements. The application also calculates additional capital requirements for reverse repurchase agreements under SEA Rule 15c3-1(a)(9)(iii).</p>
+</div>
+
+<div class="clearfix"></div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 
